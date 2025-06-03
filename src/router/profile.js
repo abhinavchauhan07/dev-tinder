@@ -47,19 +47,19 @@ profileRouter.get('/profile/view',userAuth,async(req,res)=>{
      }
  })
 
- profileRouter.get('/feed',async(req,res)=>{
+//  profileRouter.get('/feed',async(req,res)=>{
  
-     try{
-         const users=await User.find({})
-         if(users.length==0){
-             res.status(404).send('user not fnd')
-         }
-         res.send(users)
-     }
-     catch(e){
-         res.status(400).send('error in fetching user',e.message)
-     }
- })
+//      try{
+//          const users=await User.find({})
+//          if(users.length==0){
+//              res.status(404).send('user not fnd')
+//          }
+//          res.send(users)
+//      }
+//      catch(e){
+//          res.status(400).send('error in fetching user',e.message)
+//      }
+//  })
  
  profileRouter.delete('/user',async(req,res)=>{
      const id=req.body.id
