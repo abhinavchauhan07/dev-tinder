@@ -40,7 +40,10 @@ try{
        const token=await validateUser.getJWT()
        console.log(token)
        res.cookie("token",token )
-       res.send('successful')
+       res.send({
+        message:'successful',
+        data:validateUser
+       })
     }
     else
    res.status(401).send('invalid cred')
